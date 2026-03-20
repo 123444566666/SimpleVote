@@ -163,18 +163,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btn-outline {
-  background: transparent;
-  color: #4a6ee0;
-  border: 2px solid #4a6ee0;
-}
-
-.btn-outline:hover {
-  background: #4a6ee0;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 .btn-remove-option {
   position: relative;
   width: 2rem;

@@ -1,2 +1,453 @@
-[00:00:02.618] Server  LOG      ✓ Ready in 2.2s
-[00:01:00.118] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:00:02.640] Server  LOG      ✓ Ready in 2.4s
+[00:00:05.008] Server  ERROR    ⨯ ./src/app/poll/create/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/exitButton/button.css'
+  2 | import PollForm from "@/app/poll/create/components/PollForm";
+  3 | import ExitButton from "@/components/exitButton/button";
+> 4 | import "@/components/ui/exitButton/button.css";
+    | ^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:05.229] Server  ERROR    ⨯ ./src/app/poll/create/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/exitButton/button.css'
+  2 | import PollForm from "@/app/poll/create/components/PollForm";
+  3 | import ExitButton from "@/components/exitButton/button";
+> 4 | import "@/components/ui/exitButton/button.css";
+    | ^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:05.423] Server  ERROR    ⨯ ./src/app/poll/create/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/exitButton/button.css'
+  2 | import PollForm from "@/app/poll/create/components/PollForm";
+  3 | import ExitButton from "@/components/exitButton/button";
+> 4 | import "@/components/ui/exitButton/button.css";
+    | ^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:06.157] Server  LOG      ○ Compiling /_error ...
+[00:00:06.607] Server  ERROR    ⨯ ./src/app/poll/create/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/exitButton/button.css'
+  2 | import PollForm from "@/app/poll/create/components/PollForm";
+  3 | import ExitButton from "@/components/exitButton/button";
+> 4 | import "@/components/ui/exitButton/button.css";
+    | ^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:07.110] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve '@/components/ui/exitButton/button.css'
+  2 | import PollForm from "@/app/poll/create/components/PollForm";
+  3 | import ExitButton from "@/components/exitButton/button";
+> 4 | import "@/components/ui/exitButton/button.css";
+    | ^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+
+[00:00:07.222] Browser ERROR   ./src/app/poll/create/page.tsx:4:1
+Module not found: Can't resolve '@/components/ui/exitButton/button.css'
+  2 | import PollForm from "@/app/poll/create/components/PollForm";
+  3 | import ExitButton from "@/components/exitButton/button";
+> 4 | import "@/components/ui/exitButton/button.css";
+    | ^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:00:51.548] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:52.617] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:00:53.221] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:01:02.608] Browser LOG     Создание опроса с данными: {"is_public":"public","name_poll":"test","options":["1","2","3"],"question_text":"123"}
+[00:01:02.608] Browser LOG     Опрос создан: {"author":"Pasha3basha","created_at":"2026-03-20 20:33:53","description":"123","id":5,"options":[{"id":13,"poll_id":5,"text":"1","votes":0},{"id":14,"poll_id":5,"text":"2","votes":0},{"id":15,"poll_id":5,"text":"3","votes":0}],"title":"test","user_id":4}
+[00:01:03.165] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:01:03.165] Browser LOG     Загружаем опрос с ID: 5
+[00:01:03.165] Browser LOG     [2;38;2;124;124;124m%s[0m Загружаем опрос с ID: 5
+[00:01:03.165] Browser ERROR   WebSocket ошибка: {"isTrusted":true}
+[00:01:03.165] Browser LOG     WebSocket отключен
+[00:01:03.165] Browser LOG     Статус ответа: 200
+[00:01:03.165] Browser LOG     WebSocket подключен
+[00:01:03.165] Browser LOG     Преобразованные данные: {"id":"5","is_public":true,"name_poll":"test","options":[{"id":13,"poll_id":5,"text":"1","votes":0},{"id":14,"poll_id":5,"text":"2","votes":0},{"id":15,"poll_id":5,"text":"3","votes":0}],"question_text":"123","user_id":4}
+[00:01:03.165] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:03.165] Browser LOG     WebSocket:  Подключение установлено
+[00:01:03.165] Browser LOG     Статус ответа: 200
+[00:01:03.165] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:03.165] Browser LOG     Подписались на опрос: 5
+[00:01:03.165] Browser LOG     Преобразованные данные: {"id":"5","is_public":true,"name_poll":"test","options":[{"id":13,"poll_id":5,"text":"1","votes":0},{"id":14,"poll_id":5,"text":"2","votes":0},{"id":15,"poll_id":5,"text":"3","votes":0}],"question_text":"123","user_id":4}
+[00:01:04.303] Browser LOG     Голосование за optionId: 13
+[00:01:04.303] Browser LOG     WebSocket сообщение: {"pollId":5,"timestamp":"2026-03-20T20:33:54.939Z","type":"votes_update","votes":[{"id":13,"text":"1","votes":1},{"id":14,"text":"2","votes":0},{"id":15,"text":"3","votes":0}]}
+[00:01:04.303] Browser LOG     Ответ на голосование: {"author":"Pasha3basha","created_at":"2026-03-20 20:33:53","description":"123","id":5,"options":[{"id":13,"poll_id":5,"text":"1","votes":1},{"id":14,"poll_id":5,"text":"2","votes":0},{"id":15,"poll_id":5,"text":"3","votes":0}],"title":"test","user_id":4}
+[00:01:06.120] Browser LOG     WebSocket отключен
+[00:01:06.120] Browser LOG     WebSocket подключен
+[00:01:06.120] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:06.120] Browser LOG     WebSocket:  Подключение установлено
+[00:01:06.120] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:06.120] Browser LOG     Подписались на опрос: 5
+[00:01:09.149] Browser LOG     WebSocket отключен
+[00:01:09.149] Browser LOG     WebSocket подключен
+[00:01:09.149] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:09.149] Browser LOG     WebSocket:  Подключение установлено
+[00:01:09.149] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:09.149] Browser LOG     Подписались на опрос: 5
+[00:01:12.144] Browser LOG     WebSocket отключен
+[00:01:12.144] Browser LOG     WebSocket подключен
+[00:01:12.144] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:12.144] Browser LOG     WebSocket:  Подключение установлено
+[00:01:12.144] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:12.144] Browser LOG     Подписались на опрос: 5
+[00:01:15.123] Browser LOG     WebSocket отключен
+[00:01:15.124] Browser LOG     WebSocket подключен
+[00:01:15.124] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:15.124] Browser LOG     WebSocket:  Подключение установлено
+[00:01:15.124] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:15.124] Browser LOG     Подписались на опрос: 5
+[00:01:18.144] Browser LOG     WebSocket отключен
+[00:01:18.144] Browser LOG     WebSocket подключен
+[00:01:18.144] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:18.144] Browser LOG     WebSocket:  Подключение установлено
+[00:01:18.144] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:18.144] Browser LOG     Подписались на опрос: 5
+[00:01:22.999] Browser LOG     WebSocket отключен
+[00:01:22.999] Browser LOG     WebSocket подключен
+[00:01:22.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:22.999] Browser LOG     WebSocket:  Подключение установлено
+[00:01:22.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:22.999] Browser LOG     Подписались на опрос: 5
+[00:01:25.108] Browser LOG     WebSocket отключен
+[00:01:25.108] Browser LOG     WebSocket подключен
+[00:01:25.108] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:25.108] Browser LOG     WebSocket:  Подключение установлено
+[00:01:25.108] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:25.108] Browser LOG     Подписались на опрос: 5
+[00:01:28.130] Browser LOG     WebSocket отключен
+[00:01:28.131] Browser LOG     WebSocket подключен
+[00:01:28.131] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:28.131] Browser LOG     WebSocket:  Подключение установлено
+[00:01:28.131] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:28.131] Browser LOG     Подписались на опрос: 5
+[00:01:31.134] Browser LOG     WebSocket отключен
+[00:01:31.134] Browser LOG     WebSocket подключен
+[00:01:31.134] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:31.134] Browser LOG     WebSocket:  Подключение установлено
+[00:01:31.134] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:31.134] Browser LOG     Подписались на опрос: 5
+[00:01:34.534] Browser LOG     WebSocket отключен
+[00:01:34.534] Browser LOG     WebSocket подключен
+[00:01:34.534] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:34.534] Browser LOG     WebSocket:  Подключение установлено
+[00:01:34.534] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:34.534] Browser LOG     Подписались на опрос: 5
+[00:01:38.998] Browser LOG     WebSocket отключен
+[00:01:38.998] Browser LOG     WebSocket подключен
+[00:01:38.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:38.998] Browser LOG     WebSocket:  Подключение установлено
+[00:01:38.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:38.998] Browser LOG     Подписались на опрос: 5
+[00:01:42.999] Browser LOG     WebSocket отключен
+[00:01:42.999] Browser LOG     WebSocket подключен
+[00:01:42.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:42.999] Browser LOG     WebSocket:  Подключение установлено
+[00:01:42.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:42.999] Browser LOG     Подписались на опрос: 5
+[00:01:46.998] Browser LOG     WebSocket отключен
+[00:01:46.998] Browser LOG     WebSocket подключен
+[00:01:46.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:46.998] Browser LOG     WebSocket:  Подключение установлено
+[00:01:46.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:46.998] Browser LOG     Подписались на опрос: 5
+[00:01:49.108] Browser LOG     WebSocket отключен
+[00:01:49.108] Browser LOG     WebSocket подключен
+[00:01:49.108] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:49.108] Browser LOG     WebSocket:  Подключение установлено
+[00:01:49.108] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:49.108] Browser LOG     Подписались на опрос: 5
+[00:01:53.998] Browser LOG     WebSocket отключен
+[00:01:53.998] Browser LOG     WebSocket подключен
+[00:01:53.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:53.998] Browser LOG     WebSocket:  Подключение установлено
+[00:01:53.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:53.998] Browser LOG     Подписались на опрос: 5
+[00:01:57.125] Browser LOG     WebSocket отключен
+[00:01:57.125] Browser LOG     WebSocket подключен
+[00:01:57.125] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:01:57.125] Browser LOG     WebSocket:  Подключение установлено
+[00:01:57.125] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:01:57.125] Browser LOG     Подписались на опрос: 5
+[00:02:00.128] Browser LOG     WebSocket отключен
+[00:02:00.128] Browser LOG     WebSocket подключен
+[00:02:00.128] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:00.128] Browser LOG     WebSocket:  Подключение установлено
+[00:02:00.128] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:00.128] Browser LOG     Подписались на опрос: 5
+[00:02:03.128] Browser LOG     WebSocket отключен
+[00:02:03.128] Browser LOG     WebSocket подключен
+[00:02:03.128] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:03.128] Browser LOG     WebSocket:  Подключение установлено
+[00:02:03.128] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:03.128] Browser LOG     Подписались на опрос: 5
+[00:02:07.998] Browser LOG     WebSocket отключен
+[00:02:07.998] Browser LOG     WebSocket подключен
+[00:02:07.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:07.998] Browser LOG     WebSocket:  Подключение установлено
+[00:02:07.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:07.998] Browser LOG     Подписались на опрос: 5
+[00:02:11.998] Browser LOG     WebSocket отключен
+[00:02:11.998] Browser LOG     WebSocket подключен
+[00:02:11.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:11.998] Browser LOG     WebSocket:  Подключение установлено
+[00:02:11.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:11.998] Browser LOG     Подписались на опрос: 5
+[00:02:15.999] Browser LOG     WebSocket отключен
+[00:02:15.999] Browser LOG     WebSocket подключен
+[00:02:15.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:15.999] Browser LOG     WebSocket:  Подключение установлено
+[00:02:15.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:15.999] Browser LOG     Подписались на опрос: 5
+[00:02:19.999] Browser LOG     WebSocket отключен
+[00:02:19.999] Browser LOG     WebSocket подключен
+[00:02:19.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:19.999] Browser LOG     WebSocket:  Подключение установлено
+[00:02:19.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:19.999] Browser LOG     Подписались на опрос: 5
+[00:02:23.998] Browser LOG     WebSocket отключен
+[00:02:23.998] Browser LOG     WebSocket подключен
+[00:02:23.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:23.998] Browser LOG     WebSocket:  Подключение установлено
+[00:02:23.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:23.998] Browser LOG     Подписались на опрос: 5
+[00:02:27.999] Browser LOG     WebSocket отключен
+[00:02:27.999] Browser LOG     WebSocket подключен
+[00:02:27.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:27.999] Browser LOG     WebSocket:  Подключение установлено
+[00:02:27.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:27.999] Browser LOG     Подписались на опрос: 5
+[00:02:31.998] Browser LOG     WebSocket отключен
+[00:02:31.998] Browser LOG     WebSocket подключен
+[00:02:31.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:31.998] Browser LOG     WebSocket:  Подключение установлено
+[00:02:31.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:31.998] Browser LOG     Подписались на опрос: 5
+[00:02:36.001] Browser LOG     WebSocket отключен
+[00:02:36.001] Browser LOG     WebSocket подключен
+[00:02:36.001] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:36.001] Browser LOG     WebSocket:  Подключение установлено
+[00:02:36.001] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:36.001] Browser LOG     Подписались на опрос: 5
+[00:02:39.998] Browser LOG     WebSocket отключен
+[00:02:39.998] Browser LOG     WebSocket подключен
+[00:02:39.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:39.998] Browser LOG     WebSocket:  Подключение установлено
+[00:02:39.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:39.998] Browser LOG     Подписались на опрос: 5
+[00:02:43.998] Browser LOG     WebSocket отключен
+[00:02:43.998] Browser LOG     WebSocket подключен
+[00:02:43.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:43.998] Browser LOG     WebSocket:  Подключение установлено
+[00:02:43.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:43.998] Browser LOG     Подписались на опрос: 5
+[00:02:47.997] Browser LOG     WebSocket отключен
+[00:02:47.998] Browser LOG     WebSocket подключен
+[00:02:47.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:47.998] Browser LOG     WebSocket:  Подключение установлено
+[00:02:47.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:47.998] Browser LOG     Подписались на опрос: 5
+[00:02:51.998] Browser LOG     WebSocket отключен
+[00:02:51.999] Browser LOG     WebSocket подключен
+[00:02:51.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:51.999] Browser LOG     WebSocket:  Подключение установлено
+[00:02:51.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:51.999] Browser LOG     Подписались на опрос: 5
+[00:02:55.998] Browser LOG     WebSocket отключен
+[00:02:55.998] Browser LOG     WebSocket подключен
+[00:02:55.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:02:55.998] Browser LOG     WebSocket:  Подключение установлено
+[00:02:55.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:02:55.998] Browser LOG     Подписались на опрос: 5
+[00:02:59.999] Browser LOG     WebSocket отключен
+[00:02:59.999] Browser LOG     WebSocket подключен
+[00:02:59.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:00.000] Browser LOG     WebSocket:  Подключение установлено
+[00:03:00.000] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:00.000] Browser LOG     Подписались на опрос: 5
+[00:03:03.999] Browser LOG     WebSocket отключен
+[00:03:03.999] Browser LOG     WebSocket подключен
+[00:03:03.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:03.999] Browser LOG     WebSocket:  Подключение установлено
+[00:03:03.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:03.999] Browser LOG     Подписались на опрос: 5
+[00:03:07.998] Browser LOG     WebSocket отключен
+[00:03:07.998] Browser LOG     WebSocket подключен
+[00:03:07.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:07.998] Browser LOG     WebSocket:  Подключение установлено
+[00:03:07.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:07.998] Browser LOG     Подписались на опрос: 5
+[00:03:11.998] Browser LOG     WebSocket отключен
+[00:03:11.998] Browser LOG     WebSocket подключен
+[00:03:11.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:11.999] Browser LOG     WebSocket:  Подключение установлено
+[00:03:11.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:11.999] Browser LOG     Подписались на опрос: 5
+[00:03:15.997] Browser LOG     WebSocket отключен
+[00:03:15.997] Browser LOG     WebSocket подключен
+[00:03:15.997] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:15.997] Browser LOG     WebSocket:  Подключение установлено
+[00:03:15.997] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:15.997] Browser LOG     Подписались на опрос: 5
+[00:03:19.999] Browser LOG     WebSocket отключен
+[00:03:19.999] Browser LOG     WebSocket подключен
+[00:03:19.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:19.999] Browser LOG     WebSocket:  Подключение установлено
+[00:03:19.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:19.999] Browser LOG     Подписались на опрос: 5
+[00:03:23.998] Browser LOG     WebSocket отключен
+[00:03:23.998] Browser LOG     WebSocket подключен
+[00:03:23.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:23.998] Browser LOG     WebSocket:  Подключение установлено
+[00:03:23.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:23.998] Browser LOG     Подписались на опрос: 5
+[00:03:27.998] Browser LOG     WebSocket отключен
+[00:03:27.998] Browser LOG     WebSocket подключен
+[00:03:27.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:27.998] Browser LOG     WebSocket:  Подключение установлено
+[00:03:27.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:27.998] Browser LOG     Подписались на опрос: 5
+[00:03:31.998] Browser LOG     WebSocket отключен
+[00:03:31.998] Browser LOG     WebSocket подключен
+[00:03:31.998] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:31.998] Browser LOG     WebSocket:  Подключение установлено
+[00:03:31.998] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:31.998] Browser LOG     Подписались на опрос: 5
+[00:03:36.001] Browser LOG     WebSocket отключен
+[00:03:36.001] Browser LOG     WebSocket подключен
+[00:03:36.001] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:36.001] Browser LOG     WebSocket:  Подключение установлено
+[00:03:36.001] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:36.001] Browser LOG     Подписались на опрос: 5
+[00:03:38.613] Browser LOG     WebSocket отключен
+[00:03:38.613] Browser LOG     WebSocket подключен
+[00:03:38.613] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:38.613] Browser LOG     WebSocket:  Подключение установлено
+[00:03:38.613] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:38.613] Browser LOG     Подписались на опрос: 5
+[00:03:41.595] Browser LOG     WebSocket отключен
+[00:03:41.595] Browser LOG     WebSocket подключен
+[00:03:41.595] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:41.595] Browser LOG     WebSocket:  Подключение установлено
+[00:03:41.595] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:41.595] Browser LOG     Подписались на опрос: 5
+[00:03:45.346] Browser LOG     WebSocket отключен
+[00:03:45.346] Browser LOG     WebSocket подключен
+[00:03:45.346] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:45.346] Browser LOG     WebSocket:  Подключение установлено
+[00:03:45.346] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:45.346] Browser LOG     Подписались на опрос: 5
+[00:03:47.004] Browser LOG     Загружаем опрос с ID: 5
+[00:03:47.004] Browser LOG     WebSocket подключен
+[00:03:47.004] Browser LOG     Статус ответа: 200
+[00:03:47.004] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:03:47.004] Browser LOG     WebSocket:  Подключение установлено
+[00:03:47.004] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:03:47.004] Browser LOG     Подписались на опрос: 5
+[00:03:47.004] Browser LOG     Преобразованные данные: {"id":"5","is_public":true,"name_poll":"test","options":[{"id":13,"poll_id":5,"text":"1","votes":1},{"id":14,"poll_id":5,"text":"2","votes":0},{"id":15,"poll_id":5,"text":"3","votes":0}],"question_text":"123","user_id":4}
+[00:05:18.948] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:05:55.634] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:07:09.003] Browser LOG     Загружаем опрос с ID: 5
+[00:07:09.003] Browser LOG     WebSocket подключен
+[00:07:09.003] Browser LOG     Статус ответа: 200
+[00:07:09.003] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:07:09.003] Browser LOG     WebSocket:  Подключение установлено
+[00:07:09.003] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:07:09.003] Browser LOG     Подписались на опрос: 5
+[00:07:09.003] Browser LOG     Преобразованные данные: {"id":"5","is_public":true,"name_poll":"test","options":[{"id":13,"poll_id":5,"text":"1","votes":1},{"id":14,"poll_id":5,"text":"2","votes":0},{"id":15,"poll_id":5,"text":"3","votes":0}],"question_text":"123","user_id":4}
+[00:07:17.269] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:08:45.002] Browser LOG     Загружаем опрос с ID: 5
+[00:08:45.002] Browser LOG     WebSocket подключен
+[00:08:45.002] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:08:45.002] Browser LOG     WebSocket:  Подключение установлено
+[00:08:45.002] Browser LOG     Статус ответа: 200
+[00:08:45.002] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:08:45.002] Browser LOG     Подписались на опрос: 5
+[00:08:45.002] Browser LOG     Преобразованные данные: {"id":"5","is_public":true,"name_poll":"test","options":[{"id":13,"poll_id":5,"text":"1","votes":1},{"id":14,"poll_id":5,"text":"2","votes":0},{"id":15,"poll_id":5,"text":"3","votes":0}],"question_text":"123","user_id":4}
+[00:08:45.106] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:09:01.277] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:09:52.007] Browser LOG     Загружаем опрос с ID: 5
+[00:09:52.008] Browser LOG     WebSocket подключен
+[00:09:52.008] Browser LOG     Статус ответа: 200
+[00:09:52.008] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:09:52.008] Browser LOG     WebSocket:  Подключение установлено
+[00:09:52.008] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:09:52.008] Browser LOG     Подписались на опрос: 5
+[00:09:52.008] Browser LOG     Преобразованные данные: {"id":"5","is_public":true,"name_poll":"test","options":[{"id":13,"poll_id":5,"text":"1","votes":1},{"id":14,"poll_id":5,"text":"2","votes":0},{"id":15,"poll_id":5,"text":"3","votes":0}],"question_text":"123","user_id":4}
+[00:09:55.532] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:10:18.274] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:10:19.999] Browser LOG     Загружаем опрос с ID: 5
+[00:10:19.999] Browser LOG     WebSocket подключен
+[00:10:19.999] Browser LOG     Статус ответа: 200
+[00:10:19.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:10:19.999] Browser LOG     WebSocket:  Подключение установлено
+[00:10:19.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:10:19.999] Browser LOG     Подписались на опрос: 5
+[00:10:19.999] Browser LOG     Преобразованные данные: {"id":"5","is_public":true,"name_poll":"test","options":[{"id":13,"poll_id":5,"text":"1","votes":1},{"id":14,"poll_id":5,"text":"2","votes":0},{"id":15,"poll_id":5,"text":"3","votes":0}],"question_text":"123","user_id":4}
+[00:23:08.376] Browser LOG     Голосование за optionId: 14
+[00:23:08.376] Browser LOG     Ответ на голосование: {"error":"Вы уже голосовали в этом опросе"}
+[00:23:11.777] Browser LOG     Загружаем опрос с ID: 5
+[00:23:11.777] Browser LOG     WebSocket подключен
+[00:23:11.777] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:23:11.777] Browser LOG     WebSocket:  Подключение установлено
+[00:23:11.777] Browser LOG     Статус ответа: 200
+[00:23:11.777] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 5","pollId":5,"type":"subscribed"}
+[00:23:11.777] Browser LOG     Подписались на опрос: 5
+[00:23:11.777] Browser LOG     Преобразованные данные: {"id":"5","is_public":true,"name_poll":"test","options":[{"id":13,"poll_id":5,"text":"1","votes":1},{"id":14,"poll_id":5,"text":"2","votes":0},{"id":15,"poll_id":5,"text":"3","votes":0}],"question_text":"123","user_id":4}
+[00:23:20.217] Browser LOG     Загружаем опрос с ID: 3
+[00:23:20.217] Browser LOG     WebSocket подключен
+[00:23:20.217] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:23:20.217] Browser LOG     WebSocket:  Подключение установлено
+[00:23:20.217] Browser LOG     Статус ответа: 200
+[00:23:20.217] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 3","pollId":3,"type":"subscribed"}
+[00:23:20.217] Browser LOG     Подписались на опрос: 3
+[00:23:20.217] Browser LOG     Преобразованные данные: {"id":"3","is_public":true,"name_poll":"nestor","options":[{"id":7,"poll_id":3,"text":"da","votes":1},{"id":8,"poll_id":3,"text":"100% da","votes":1},{"id":9,"poll_id":3,"text":"konecno da","votes":0}],"question_text":"nestor krasava?","user_id":2}
+[00:23:22.333] Browser LOG     Голосование за optionId: 7
+[00:23:22.333] Browser LOG     WebSocket сообщение: {"pollId":3,"timestamp":"2026-03-20T20:56:14.447Z","type":"votes_update","votes":[{"id":7,"text":"da","votes":2},{"id":8,"text":"100% da","votes":1},{"id":9,"text":"konecno da","votes":0}]}
+[00:23:22.333] Browser LOG     Ответ на голосование: {"author":"nikitaRuiner","created_at":"2025-12-07 22:14:42","description":"nestor krasava?","id":3,"options":[{"id":7,"poll_id":3,"text":"da","votes":2},{"id":8,"poll_id":3,"text":"100% da","votes":1},{"id":9,"poll_id":3,"text":"konecno da","votes":0}],"title":"nestor","user_id":2}
+[00:23:29.386] Browser LOG     Загружаем опрос с ID: 1
+[00:23:29.386] Browser LOG     WebSocket подключен
+[00:23:29.386] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:23:29.386] Browser LOG     WebSocket:  Подключение установлено
+[00:23:29.386] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 1","pollId":1,"type":"subscribed"}
+[00:23:29.386] Browser LOG     Подписались на опрос: 1
+[00:23:29.386] Browser LOG     Статус ответа: 200
+[00:23:29.386] Browser LOG     Преобразованные данные: {"id":"1","is_public":true,"name_poll":"test","options":[{"id":1,"poll_id":1,"text":"1","votes":1},{"id":2,"poll_id":1,"text":"2","votes":1},{"id":3,"poll_id":1,"text":"3","votes":0}],"question_text":"123","user_id":2}
+[00:23:30.120] Browser LOG     Голосование за optionId: 1
+[00:23:30.120] Browser LOG     WebSocket сообщение: {"pollId":1,"timestamp":"2026-03-20T20:56:22.252Z","type":"votes_update","votes":[{"id":1,"text":"1","votes":2},{"id":2,"text":"2","votes":1},{"id":3,"text":"3","votes":0}]}
+[00:23:30.120] Browser LOG     Ответ на голосование: {"author":"nikitaRuiner","created_at":"2025-12-07 21:53:35","description":"123","id":1,"options":[{"id":1,"poll_id":1,"text":"1","votes":2},{"id":2,"poll_id":1,"text":"2","votes":1},{"id":3,"poll_id":1,"text":"3","votes":0}],"title":"test","user_id":2}
+[00:23:32.551] Browser LOG     Загружаем опрос с ID: 1
+[00:23:32.551] Browser LOG     WebSocket подключен
+[00:23:32.551] Browser LOG     Статус ответа: 200
+[00:23:32.551] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:23:32.551] Browser LOG     WebSocket:  Подключение установлено
+[00:23:32.551] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 1","pollId":1,"type":"subscribed"}
+[00:23:32.551] Browser LOG     Подписались на опрос: 1
+[00:23:32.551] Browser LOG     Преобразованные данные: {"id":"1","is_public":true,"name_poll":"test","options":[{"id":1,"poll_id":1,"text":"1","votes":2},{"id":2,"poll_id":1,"text":"2","votes":1},{"id":3,"poll_id":1,"text":"3","votes":0}],"question_text":"123","user_id":2}
+[00:24:28.628] Browser LOG     Статус ответа: 200
+[00:24:28.628] Browser LOG     Преобразованные данные: {"id":"1","is_public":true,"name_poll":"test","options":[{"id":1,"poll_id":1,"text":"1","votes":2},{"id":2,"poll_id":1,"text":"2","votes":1},{"id":3,"poll_id":1,"text":"3","votes":0}],"question_text":"123","user_id":2}
+[00:24:29.673] Browser LOG     Голосование за optionId: 3
+[00:24:29.673] Browser LOG     Ответ на голосование: {"error":"Вы уже голосовали в этом опросе"}
+[00:30:26.000] Browser LOG     WebSocket отключен
+[00:30:29.999] Browser ERROR   WebSocket ошибка: {"isTrusted":true}
+[00:30:29.999] Browser LOG     WebSocket отключен
+[00:30:33.998] Browser LOG     WebSocket подключен
+[00:30:33.999] Browser LOG     WebSocket сообщение: {"message":"Подключение установлено","type":"welcome"}
+[00:30:33.999] Browser LOG     WebSocket:  Подключение установлено
+[00:30:33.999] Browser LOG     WebSocket сообщение: {"message":"Вы подписаны на обновления опроса 1","pollId":1,"type":"subscribed"}
+[00:30:33.999] Browser LOG     Подписались на опрос: 1

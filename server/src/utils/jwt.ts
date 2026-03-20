@@ -5,7 +5,6 @@ export const signToken = (payload: {
   id: number;
   username: string;
 }): string => {
-  // Без expiresIn
   return jwt.sign(payload, env.JWT_SECRET);
 };
 
