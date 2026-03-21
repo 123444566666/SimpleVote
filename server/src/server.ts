@@ -30,8 +30,16 @@ const wss = new WebSocketServer({ server });
 const pollClients = new Map<number, Set<WebSocket>>();
 
 // === Глобальные middleware ===
-// Helmet для защиты
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        connectSrc: ["'self'", "ws://localhost:8080", "wss://localhost:8080"],
+      },
+    },
+  }),
+);
 
 // CORS для разрешенных доменов
 app.use(
@@ -43,7 +51,7 @@ app.use(
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
-  })
+  }),
 );
 
 // Парсинг JSON
@@ -62,7 +70,7 @@ wss.on("connection", (ws: WebSocket) => {
     JSON.stringify({
       type: "welcome",
       message: "Подключение установлено",
-    })
+    }),
   );
 
   // Обработка сообщений от клиента
@@ -93,7 +101,7 @@ wss.on("connection", (ws: WebSocket) => {
             type: "subscribed",
             pollId: pollId,
             message: `Вы подписаны на обновления опроса ${pollId}`,
-          })
+          }),
         );
       }
 

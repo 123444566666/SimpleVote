@@ -1,12 +1,11 @@
-"use client"; // Обязательно, чтобы компонент был клиентским
-
+"use client";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 
 export default function survey() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
-  const ws = useRef(null); // Используем useRef для хранения экземпляра WebSocket
+  const ws = useRef<WebSocket | null>(null); // Используем useRef для хранения экземпляра WebSocket
 
   useEffect(() => {
     // Эта проверка необходима для работы SSR в Next.js

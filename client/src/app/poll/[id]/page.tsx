@@ -46,7 +46,7 @@ export default function SurveyPage() {
             JSON.stringify({
               type: "subscribe",
               pollId: parseInt(params.id as string),
-            })
+            }),
           );
         };
 
@@ -67,7 +67,7 @@ export default function SurveyPage() {
                   ...prev,
                   options: prev.options.map((option) => {
                     const updatedVote = data.votes.find(
-                      (v: any) => v.id === option.id
+                      (v: any) => v.id === option.id,
                     );
                     return updatedVote
                       ? { ...option, votes: updatedVote.votes }
@@ -141,7 +141,7 @@ export default function SurveyPage() {
   const fetchPoll = async () => {
     try {
       const response = await fetch(
-        `http://localhost:6700/api/polls/${params.id}`
+        `http://localhost:6700/api/polls/${params.id}`,
       );
       console.log("Статус ответа:", response.status);
 
@@ -191,7 +191,7 @@ export default function SurveyPage() {
             Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify({ optionId }),
-        }
+        },
       );
 
       const data = await response.json();
@@ -324,6 +324,9 @@ export default function SurveyPage() {
         <button onClick={fetchPoll} className="refresh-button">
           Обновить вручную
         </button>
+        <Link href="/" className="not-found-link">
+          Вернуться на главную
+        </Link>
       </div>
       <ToastContainer />
     </div>

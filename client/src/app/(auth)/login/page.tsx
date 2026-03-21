@@ -15,7 +15,7 @@ export default function Page() {
 
     const isEmail = loginValue.includes("@");
 
-    await login(loginValue, password, isEmail);
+    await login(loginValue, password);
   }
 
   function handleOpenPassword() {
