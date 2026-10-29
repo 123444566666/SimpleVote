@@ -1,13 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
 export default function FormActions() {
-  const router = useRouter();
 
   // function createPoll() {
   //   // Потом надо логику сюда
   //   const newPollId = 1;
+  //   const router = useRouter();
   //   router.push(`/survey/${newPollId}`);
   // }
 

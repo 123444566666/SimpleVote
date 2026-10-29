@@ -1,176 +1,38 @@
 "use client";
 
-import { useParams } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
-import { toast, ToastContainer } from "react-toastify";
-import Link from "next/link";
-import "./style.css";
+import { useCallback, useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
-interface Poll {
-  id: string;
-  name_poll: string;
-  question_text: string;
-  options: Array<{ id: number; text: string; votes: number }>;
-  is_public: boolean;
-  user_id: number;
-}
-
-export default function SurveyPage() {
-  const params = useParams();
-  const [poll, setPoll] = useState<Poll | null>(null);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function PollPage({ params }: { params: any }) {
+  const router = useRouter();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [poll, setPoll] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const wsRef = useRef<WebSocket | null>(null);
-  const [isConnected, setIsConnected] = useState(false);
+  let selectedOptionId: number | null = null;
 
-  // Подключение к WebSocket
-  useEffect(() => {
-    if (!params.id) return;
-
-    const connectWebSocket = () => {
-      try {
-        // Закрываем предыдущее соединение если есть
-        if (wsRef.current) {
-          wsRef.current.close();
-        }
-
-        // Подключаемся к WebSocket серверу
-        const ws = new WebSocket("ws://localhost:6700");
-        wsRef.current = ws;
-
-        ws.onopen = () => {
-          console.log("WebSocket подключен");
-          setIsConnected(true);
-
-          // Подписываемся на обновления опроса
-          ws.send(
-            JSON.stringify({
-              type: "subscribe",
-              pollId: parseInt(params.id as string),
-            }),
-          );
-        };
-
-        ws.onmessage = (event) => {
-          try {
-            const data = JSON.parse(event.data);
-            console.log("WebSocket сообщение:", data);
-
-            if (
-              data.type === "votes_update" &&
-              data.pollId === parseInt(params.id as string)
-            ) {
-              // Обновляем голоса в реальном времени
-              setPoll((prev) => {
-                if (!prev) return prev;
-
-                return {
-                  ...prev,
-                  options: prev.options.map((option) => {
-                    const updatedVote = data.votes.find(
-                      (v: any) => v.id === option.id,
-                    );
-                    return updatedVote
-                      ? { ...option, votes: updatedVote.votes }
-                      : option;
-                  }),
-                };
-              });
-
-              toast.info("Результаты обновлены в реальном времени!", {
-                autoClose: 2000,
-                hideProgressBar: true,
-              });
-            }
-
-            if (data.type === "welcome") {
-              console.log("WebSocket: ", data.message);
-            }
-
-            if (data.type === "subscribed") {
-              console.log("Подписались на опрос:", data.pollId);
-            }
-          } catch (error) {
-            console.error("Ошибка обработки WebSocket сообщения:", error);
-          }
-        };
-
-        ws.onclose = () => {
-          console.log("WebSocket отключен");
-          setIsConnected(false);
-
-          // Пытаемся переподключиться через 3 секунды
-          setTimeout(() => {
-            if (params.id) {
-              connectWebSocket();
-            }
-          }, 3000);
-        };
-
-        ws.onerror = (error) => {
-          console.error("WebSocket ошибка:", error);
-        };
-
-        return () => {
-          if (ws.readyState === WebSocket.OPEN) {
-            ws.close();
-          }
-        };
-      } catch (error) {
-        console.error("Ошибка подключения WebSocket:", error);
-      }
-    };
-
-    connectWebSocket();
-
-    // Очистка при размонтировании
-    return () => {
-      if (wsRef.current) {
-        wsRef.current.close();
-      }
-    };
-  }, [params.id]);
-
-  // Загрузка данных опроса
-  useEffect(() => {
-    if (params.id) {
-      console.log("Загружаем опрос с ID:", params.id);
-      fetchPoll();
-    }
-  }, [params.id]);
-
-  const fetchPoll = async () => {
+  const fetchPoll = useCallback(async () => {
     try {
-      const response = await fetch(
-        `http://localhost:6700/api/polls/${params.id}`,
-      );
-      console.log("Статус ответа:", response.status);
+      const response = await fetch(`http://localhost:6700/api/polls/${params.id}`);
 
-      if (response.ok) {
-        const data = await response.json();
-
-        const transformedData: Poll = {
-          id: data.id?.toString() || params.id?.toString() || "",
-          name_poll: data.name_poll || data.title || "Без названия",
-          question_text: data.question_text || data.description || "",
-          options: data.options || data.answers || [],
-          is_public: data.is_public !== false,
-          user_id: data.user_id || data.author_id || 1,
-        };
-
-        console.log("Преобразованные данные:", transformedData);
-        setPoll(transformedData);
-      } else {
+      if (!response.ok) {
         const errorText = await response.text();
         console.error("Ошибка ответа:", errorText);
         toast.error("Опрос не найден");
+        return;
       }
+
+      const data = await response.json();
+      console.log("Получен опрос:", data);
+      setPoll(data);
     } catch (error) {
       console.error("Ошибка загрузки опроса:", error);
       toast.error("Ошибка загрузки опроса");
     } finally {
       setLoading(false);
     }
-  };
+  }, [params.id]);
 
   const handleVote = async (optionId: number) => {
     try {
@@ -190,145 +52,95 @@ export default function SurveyPage() {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify({ optionId }),
-        },
+        }
       );
 
-      const data = await response.json();
-      console.log("Ответ на голосование:", data);
-
-      if (response.ok) {
-        toast.success("Голос принят!");
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Ошибка при отправке голоса:", errorText);
+        toast.error("Ошибка при отправке голоса");
       } else {
-        toast.error(data.error || "Ошибка голосования");
+        // Refresh poll data after voting
+        fetchPoll();
       }
     } catch (error) {
       console.error("Ошибка при отправке голоса:", error);
-      toast.error("Ошибка при отправке голоса");
+      toast.error("Ошибка загрузки опроса");
+    } finally {
+      router.push("/polls");
     }
   };
 
+  const handlePollVote = useCallback((e: React.FormEvent) => {
+    e.preventDefault();
+    if (selectedOptionId && !loading) {
+      handleVote(selectedOptionId);
+    }
+  }, [selectedOptionId, loading]);
+
+  useEffect(() => {
+    fetchPoll();
+  }, []);
+
+  // Show loading screen first
   if (loading) {
-    return (
-      <div className="survey-container">
-        <div className="survey-loading">
-          <div className="loading-spinner"></div>
-          <p className="loading-text">Загрузка опроса ID: {params.id}...</p>
-          <div
-            className={`ws-status ${
-              isConnected ? "connected" : "disconnected"
-            }`}
-          >
-            WebSocket: {isConnected ? "Подключен" : "Отключен"}
-          </div>
-        </div>
-      </div>
-    );
+    return <div className="h-screen flex items-center justify-center">Загрузка...</div>;
   }
 
-  if (!poll) {
-    return (
-      <div className="survey-container">
-        <div className="survey-not-found">
-          <h1 className="not-found-title">Опрос не найден</h1>
-          <p className="not-found-text">ID: {params.id}</p>
-          <Link href="/" className="not-found-link">
-            Вернуться на главную
-          </Link>
-        </div>
-      </div>
-    );
+  // Show error state if poll not found
+  if (!poll || !poll.options?.length) {
+    return <div className="p-8 text-center">Опрос не найден</div>;
   }
-
-  const totalVotes =
-    poll.options?.reduce((sum, option) => sum + (option.votes || 0), 0) || 0;
 
   return (
-    <div className="survey-container">
-      {/* Статус WebSocket */}
-      <div
-        className={`ws-connection ${
-          isConnected ? "connected" : "disconnected"
-        }`}
-      >
-        <div className="ws-indicator"></div>
-        <span className="ws-text">
-          {isConnected ? "Обновления в реальном времени" : "Нет соединения"}
-        </span>
-      </div>
+    <SurveyPage>
+      <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
+        <h1 className="text-3xl font-bold mb-6">{poll.title}</h1>
 
-      <div className="survey-header">
-        <h1 className="survey-title">{poll.name_poll}</h1>
-        {poll.question_text && (
-          <p className="survey-description">{poll.question_text}</p>
-        )}
-        <div className="survey-meta">
-          <span className="meta-total">Всего голосов: {totalVotes}</span>
-          <span
-            className={`meta-status ${poll.is_public ? "public" : "private"}`}
+        <form onSubmit={handlePollVote} className="space-y-4">
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          {poll.options.map((option: any) => (
+            <label key={option.id} className="flex items-center space-x-3 cursor-pointer">
+              <input
+                type="radio"
+                name={`poll-${poll.id}`}
+                value={option.id}
+                checked={selectedOptionId === option.id}
+                onChange={(e) => (selectedOptionId = Number(e.target.value))}
+                className="w-4 h-4 text-blue-600"
+              />
+              <span>{option.text}</span>
+            </label>
+          ))}
+
+          <button
+            type="submit"
+            disabled={!selectedOptionId || loading}
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed font-medium"
           >
-            {poll.is_public ? "Публичный" : "Приватный"}
-          </span>
-          <span className="meta-realtime">⚡ Real-time</span>
-        </div>
-      </div>
+            Голосовать
+          </button>
+        </form>
 
-      <div className="survey-options">
-        {poll.options?.map((option, index) => {
-          const percentage =
-            totalVotes > 0
-              ? Math.round(((option.votes || 0) / totalVotes) * 100)
-              : 0;
-
-          return (
-            <div key={option.id || index} className="option-card">
-              <div className="option-header">
-                <span className="option-text">
-                  {option.text || `Вариант ${index + 1}`}
-                </span>
-                <span className="option-votes">
-                  {option.votes || 0} голосов
-                </span>
-              </div>
-
-              <div className="option-progress">
-                <div
-                  className="progress-bar"
-                  style={{ width: `${percentage}%` }}
-                ></div>
-                <span className="progress-percent">{percentage}%</span>
-              </div>
-
-              <button
-                onClick={() => handleVote(option.id || index + 1)}
-                className="vote-button"
-              >
-                <span className="vote-icon">✓</span>
-                Голосовать
-              </button>
+        {poll.results && poll.options.length > 1 && (
+          <div className="mt-8 pt-6 border-t">
+            <h2 className="text-xl font-semibold mb-4">Результаты</h2>
+            <div className="space-y-3">
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              {poll.options.map((option: any) => (
+                <div key={option.id} className="flex justify-between items-center">
+                  <span>{option.text}</span>
+                  <span className="font-semibold">{option.results}%</span>
+                </div>
+              ))}
             </div>
-          );
-        })}
+          </div>
+        )}
       </div>
-
-      <div className="survey-footer">
-        <div className="footer-info">
-          <p className="info-text">
-            ⚡ Голоса обновляются в реальном времени через WebSocket
-          </p>
-          <p className="info-text">
-            Каждый пользователь может проголосовать только один раз
-          </p>
-          <p className="info-id">ID опроса: {params.id}</p>
-        </div>
-        <button onClick={fetchPoll} className="refresh-button">
-          Обновить вручную
-        </button>
-        <Link href="/" className="not-found-link">
-          Вернуться на главную
-        </Link>
-      </div>
-      <ToastContainer />
-    </div>
+    </SurveyPage>
   );
+}
+
+function SurveyPage({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }

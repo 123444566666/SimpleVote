@@ -1,4 +1,3 @@
-import { title } from "process";
 
 interface IFooterInfo {
   id: number;

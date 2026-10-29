@@ -1,7 +1,6 @@
 "use client";
 import { ToastContainer } from "react-toastify";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import ExitButton from "../../../../components/exitButton/button";
 import "../../../../components/exitButton/button.css";
 
@@ -18,7 +17,6 @@ export default function LoginForm({
   inputNameRef,
   inputPasswordRef,
 }: IFormRegisterProps) {
-  const router = useRouter();
   return (
     <div className="login-page">
       <div className="container">

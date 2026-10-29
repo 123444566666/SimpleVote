@@ -13,8 +13,6 @@ export default function Page() {
     const loginValue = inputNameRef.current?.value || "";
     const password = inputPasswordRef.current?.value || "";
 
-    const isEmail = loginValue.includes("@");
-
     await login(loginValue, password);
   }
 

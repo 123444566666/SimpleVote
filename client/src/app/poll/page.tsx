@@ -2,8 +2,8 @@
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 
-export default function survey() {
-  const [messages, setMessages] = useState([]);
+export default function Survey() {
+  const [messages, setMessages] = useState<string[]>([]);
   const [input, setInput] = useState("");
   const ws = useRef<WebSocket | null>(null); // Используем useRef для хранения экземпляра WebSocket
 

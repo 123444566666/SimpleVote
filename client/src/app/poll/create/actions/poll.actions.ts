@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 export async function createPoll(
   data: ISurvey
-): Promise<{ success: boolean; data?: any; error?: any }> {
+): Promise<{ success: boolean; data?: unknown; error?: unknown }> {
   try {
     const token = localStorage.getItem("token");
 
